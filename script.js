@@ -65,12 +65,6 @@ document.querySelectorAll(".step").forEach((step) => {
   });
 });
 
-document.querySelectorAll(".map-pin").forEach((pin) => {
-  pin.addEventListener("click", () => {
-    document.querySelectorAll(".map-pin").forEach((item) => item.classList.toggle("is-active", item === pin));
-  });
-});
-
 if (!prefersReducedMotion) {
   const revealGroups = [
     [".trust-strip__inner", ""],
@@ -78,7 +72,6 @@ if (!prefersReducedMotion) {
     [".feature-card", ""],
     [".property-card", ""],
     [".process__copy", "reveal--left"],
-    [".map-card", "reveal--right"],
     [".subscribe__card", ""],
     [".faq__layout > div:first-child", "reveal--left"],
     [".accordion__item", "reveal--right"],
