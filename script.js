@@ -65,11 +65,73 @@ document.querySelectorAll(".step").forEach((step) => {
   });
 });
 
+document.querySelectorAll(".video-card").forEach((card) => {
+  const video = card.querySelector(".brand-video");
+  const playButton = card.querySelector(".video-toggle");
+  const muteButton = card.querySelector(".video-mute");
+
+  const syncVideoState = () => {
+    const isPlaying = !video.paused && !video.ended;
+    card.classList.toggle("is-playing", isPlaying);
+    card.classList.toggle("is-sound-on", !video.muted);
+    playButton.setAttribute("aria-label", isPlaying ? "Призупинити відео" : "Відтворити відео");
+    muteButton.setAttribute("aria-label", video.muted ? "Увімкнути звук" : "Вимкнути звук");
+  };
+
+  playButton.addEventListener("click", async () => {
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch {
+        card.classList.remove("is-playing");
+      }
+    } else {
+      video.pause();
+    }
+    syncVideoState();
+  });
+
+  muteButton.addEventListener("click", () => {
+    video.muted = !video.muted;
+    syncVideoState();
+  });
+
+  video.addEventListener("play", syncVideoState);
+  video.addEventListener("pause", syncVideoState);
+  video.addEventListener("volumechange", syncVideoState);
+  syncVideoState();
+});
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const autoplayObserver = new IntersectionObserver((entries) => {
+    entries.forEach(async (entry) => {
+      const card = entry.target;
+      const video = card.querySelector(".brand-video");
+
+      if (entry.isIntersecting) {
+        try {
+          await video.play();
+        } catch {
+          card.classList.remove("is-playing");
+        }
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.45 });
+
+  document.querySelectorAll(".video-card[data-autoplay]").forEach((card) => {
+    autoplayObserver.observe(card);
+  });
+}
+
 if (!prefersReducedMotion) {
   const revealGroups = [
     [".trust-strip__inner", ""],
     [".section-heading", ""],
     [".feature-card", ""],
+    [".bot-shot", ""],
+    [".bot-screens__footer", ""],
     [".property-card", ""],
     [".process__copy", "reveal--left"],
     [".subscribe__card", ""],
