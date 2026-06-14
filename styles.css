@@ -1365,6 +1365,20 @@ h1 span {
   border-color: rgba(76, 140, 255, 0.14);
 }
 
+.video-stage--single {
+  min-height: 720px;
+  grid-template-columns: 1fr;
+}
+
+.video-stage--single .video-card {
+  width: min(100%, 430px);
+}
+
+.video-stage--single .video-stage__note {
+  right: 10%;
+  bottom: 11%;
+}
+
 .video-card {
   position: relative;
   overflow: hidden;
@@ -3303,6 +3317,10 @@ h1 span {
   .video-stage {
     min-height: 680px;
     grid-template-columns: 1fr 0.78fr;
+  }
+
+  .video-stage--single {
+    grid-template-columns: 1fr;
   }
 
   .video-card--primary {
