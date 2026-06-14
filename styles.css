@@ -3531,7 +3531,7 @@ h1 span {
 
   .video-card--primary,
   .video-card--secondary {
-    width: min(100%, 360px);
+    width: min(calc(100% - 16px), 344px);
     margin: 0 auto;
     transform: none;
   }
@@ -3541,13 +3541,44 @@ h1 span {
     transform: translateY(-5px);
   }
 
-  .video-stage__note {
+  .video-stage__note,
+  .video-stage--single .video-stage__note {
     position: relative;
     right: auto;
     bottom: auto;
-    width: min(100%, 360px);
+    width: min(calc(100% - 16px), 344px);
     min-width: 0;
     margin: 0 auto;
+    animation: none;
+    transform: none;
+  }
+
+  .video-card__controls {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .video-control {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+
+  .video-stage__note {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .video-stage__note-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .video-stage__note > a {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
   }
 
   .bot-screens {
