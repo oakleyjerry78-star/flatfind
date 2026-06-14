@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090515">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="description" content="Flat Find — Telegram-бот для пошуку актуальних квартир без комісії.">
   <title>Flat Find — знайди квартиру без комісії</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260614-5">
 </head>
 <body>
   <div class="page-glow page-glow--one"></div>
@@ -28,6 +31,7 @@
         <div class="nav__links" id="navLinks">
           <a href="#apartments">Квартири</a>
           <a href="#advantages">Переваги</a>
+          <a href="#video">Відео</a>
           <a href="#how-it-works">Як це працює</a>
           <a href="#faq">FAQ</a>
         </div>
@@ -76,13 +80,13 @@
 
         <div class="hero__visual" aria-label="Маскот Flat Find">
           <div class="hero__photo">
-            <img src="assets/properties/apartment-3.jpg" alt="" aria-hidden="true">
+            <img src="assets/properties/apartment-3.jpg?v=20260614-4" alt="" aria-hidden="true">
           </div>
           <div class="mascot-orbit">
             <span class="orbit orbit--one"></span>
             <span class="orbit orbit--two"></span>
             <div class="mascot-card">
-              <img src="assets/mascot.jpg" alt="Неоновий маскот Flat Find">
+              <img src="assets/mascot.jpg?v=20260614-4" alt="Неоновий маскот Flat Find">
             </div>
             <div class="floating-card floating-card--top">
               <span class="status-dot"></span>
@@ -207,6 +211,129 @@
       </div>
     </section>
 
+    <section class="section media-showcase" id="video">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Flat Find у русі</span>
+            <h2>Подивись, як виглядає пошук без зайвих слів</h2>
+          </div>
+          <p>Коротке відео про сервіс, атмосферу бренду та шлях до квартири без комісії.</p>
+        </div>
+
+        <div class="video-stage video-stage--single">
+          <article class="video-card video-card--primary" data-autoplay>
+            <video
+              class="brand-video"
+              playsinline
+              muted
+              loop
+              preload="auto"
+              poster="assets/properties/apartment-2.jpg?v=20260614-5"
+            >
+              <source src="assets/videos/flat-find-video-2.mp4?v=20260614-5" type="video/mp4">
+              Ваш браузер не підтримує відео.
+            </video>
+            <div class="video-card__scrim"></div>
+            <div class="video-card__topline">
+              <span><i></i> У боті</span>
+              <span>00:08</span>
+            </div>
+            <div class="video-card__caption">
+              <span>Все просто</span>
+              <strong>Відкрив. Обрав. Знайшов.</strong>
+            </div>
+            <div class="video-card__controls">
+              <button class="video-control video-toggle" type="button" aria-label="Призупинити відео">
+                <svg class="video-icon video-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+                <svg class="video-icon video-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+              </button>
+              <button class="video-control video-mute" type="button" aria-label="Увімкнути звук">
+                <svg class="video-icon video-icon--muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM16 9l5 6M21 9l-5 6"/></svg>
+                <svg class="video-icon video-icon--sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <div class="video-stage__note glass">
+            <span class="video-stage__note-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m21 3-7.6 18-4.3-7.1L3 10.8Z"/><path d="m9.1 13.9 4.6-4.2"/></svg>
+            </span>
+            <span>
+              <small>Пошук продовжується тут</small>
+              <strong>@flatfind_estate_bot</strong>
+            </span>
+            <a href="https://t.me/flatfind_estate_bot" target="_blank" rel="noreferrer" aria-label="Відкрити Telegram-бот">↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bot-screens" id="bot-preview">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Бот зсередини</span>
+            <h2>Від першого запуску до готової квартири</h2>
+          </div>
+          <p>Flat Find веде крок за кроком: відкриває меню, запитує потрібні параметри й показує актуальні оголошення.</p>
+        </div>
+
+        <div class="bot-screens__track">
+          <article class="bot-shot">
+            <div class="bot-shot__frame">
+              <img src="assets/screenshots/bot-welcome.jpg?v=20260614-4" alt="Стартовий екран Telegram-бота Flat Find" loading="lazy">
+            </div>
+            <div class="bot-shot__caption">
+              <span>01</span>
+              <div><strong>Запусти бота</strong><small>Знайомство із сервісом</small></div>
+            </div>
+          </article>
+
+          <article class="bot-shot">
+            <div class="bot-shot__frame">
+              <img src="assets/screenshots/bot-menu.jpg?v=20260614-4" alt="Головне меню Telegram-бота Flat Find" loading="lazy">
+            </div>
+            <div class="bot-shot__caption">
+              <span>02</span>
+              <div><strong>Обери напрям</strong><small>Оренда, купівля або підписка</small></div>
+            </div>
+          </article>
+
+          <article class="bot-shot">
+            <div class="bot-shot__frame">
+              <img src="assets/screenshots/bot-city.jpg?v=20260614-4" alt="Вибір міста для пошуку квартири у Flat Find" loading="lazy">
+            </div>
+            <div class="bot-shot__caption">
+              <span>03</span>
+              <div><strong>Налаштуй пошук</strong><small>Місто та потрібні фільтри</small></div>
+            </div>
+          </article>
+
+          <article class="bot-shot">
+            <div class="bot-shot__frame">
+              <img src="assets/screenshots/bot-listing.jpg?v=20260614-4" alt="Готове оголошення квартири у Telegram-боті Flat Find" loading="lazy">
+            </div>
+            <div class="bot-shot__caption">
+              <span>04</span>
+              <div><strong>Отримай варіанти</strong><small>Фото, ціна й деталі в одному місці</small></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="bot-screens__footer glass">
+          <div>
+            <span class="status-dot"></span>
+            <p><strong>Усе відбувається в Telegram</strong><small>Без додаткових застосунків і складної реєстрації</small></p>
+          </div>
+          <a class="button button--small button--light" href="https://t.me/flatfind_estate_bot" target="_blank" rel="noreferrer">
+            Спробувати Flat Find
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section apartments" id="apartments">
       <div class="container">
         <div class="section-heading section-heading--apartments">
@@ -219,7 +346,7 @@
         <div class="property-grid" id="propertyGrid">
           <article class="property-card" data-city="Київ" data-district="Печерський" data-rooms="2" data-price="28000" data-order="1">
             <div class="property-card__media">
-              <img src="assets/properties/apartment-1.jpg" alt="Світла квартира з панорамними вікнами">
+              <img src="assets/properties/apartment-1.jpg?v=20260614-4" alt="Світла квартира з панорамними вікнами">
               <span class="property-card__badge">Без комісії</span>
               <div class="property-card__photo-count">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3"/></svg>
@@ -246,7 +373,7 @@
 
           <article class="property-card" data-city="Київ" data-district="Шевченківський" data-rooms="1" data-price="19500" data-order="2">
             <div class="property-card__media">
-              <img src="assets/properties/apartment-2.jpg" alt="Затишна квартира-студія">
+              <img src="assets/properties/apartment-2.jpg?v=20260614-4" alt="Затишна квартира-студія">
               <span class="property-card__badge property-card__badge--pink">Ціну знижено</span>
               <div class="property-card__photo-count">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3"/></svg>
@@ -273,7 +400,7 @@
 
           <article class="property-card" data-city="Київ" data-district="Подільський" data-rooms="3" data-price="36000" data-order="3">
             <div class="property-card__media">
-              <img src="assets/properties/apartment-3.jpg" alt="Квартира у новому житловому комплексі">
+              <img src="assets/properties/apartment-3.jpg?v=20260614-4" alt="Квартира у новому житловому комплексі">
               <span class="property-card__badge">Без комісії</span>
               <div class="property-card__photo-count">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3"/></svg>
@@ -300,7 +427,7 @@
 
           <article class="property-card" data-city="Київ" data-district="Голосіївський" data-rooms="2" data-price="24500" data-order="4">
             <div class="property-card__media">
-              <img src="assets/properties/apartment-4.jpg" alt="Мінімалістична квартира у світлих тонах">
+              <img src="assets/properties/apartment-4.jpg?v=20260614-4" alt="Мінімалістична квартира у світлих тонах">
               <span class="property-card__badge">Без комісії</span>
               <div class="property-card__photo-count">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z"/><circle cx="12" cy="13" r="3"/></svg>
@@ -376,6 +503,10 @@
             <span class="section-kicker">Нові квартири першими</span>
             <h2>Твій фільтр працює, навіть коли ти відпочиваєш</h2>
             <p>Збережи параметри пошуку в @flatfind_estate_bot, а Flat Find надішле нові збіги одразу після публікації.</p>
+            <div class="subscription-price" aria-label="Вартість підписки 439 гривень 99 копійок на місяць">
+              <span>Повний доступ</span>
+              <strong>439,99 <small>грн / місяць</small></strong>
+            </div>
             <a class="button button--light telegram-cta" href="https://t.me/flatfind_estate_bot" target="_blank" rel="noreferrer">
               Відкрити @flatfind_estate_bot
               <span>↗</span>
@@ -384,7 +515,7 @@
           </div>
           <div class="subscribe__mascot">
             <div class="subscribe__halo"></div>
-            <img src="assets/mascot.jpg" alt="Маскот Flat Find">
+            <img src="assets/mascot.jpg?v=20260614-4" alt="Маскот Flat Find">
             <div class="message-bubble">
               <span>Нова квартира</span>
               <b>Печерськ · 28 000 грн</b>
@@ -437,7 +568,7 @@
               <i></i>
             </button>
             <div class="accordion__content">
-              <p>Пошук відбувається в Telegram-боті. Актуальні умови та доступні функції показані безпосередньо в @flatfind_estate_bot.</p>
+              <p>Підписка на Flat Find коштує 439,99 грн на місяць. Пошук, керування фільтрами та сповіщення працюють у @flatfind_estate_bot.</p>
             </div>
           </article>
         </div>
@@ -472,6 +603,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260614-5"></script>
 </body>
 </html>
