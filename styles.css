@@ -1416,24 +1416,78 @@ h1 span {
 
 .video-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: min(100%, 450px);
   height: 750px;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  filter: drop-shadow(0 38px 65px rgba(0, 0, 0, 0.42));
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 42px;
+  background:
+    linear-gradient(#10091b, #10091b) padding-box,
+    linear-gradient(135deg, #ff42c0 0%, #a759ff 42%, #5c8fff 72%, #70f1ff 100%) border-box;
+  box-shadow:
+    0 38px 85px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(255, 48, 184, 0.22),
+    0 0 58px rgba(72, 125, 255, 0.16),
+    inset 0 0 22px rgba(255, 255, 255, 0.08);
   isolation: isolate;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.video-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: -12px;
+  border: 1px solid rgba(208, 101, 255, 0.2);
+  border-radius: 52px;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(255, 52, 185, 0.22), transparent 24%),
+    radial-gradient(circle at 88% 82%, rgba(71, 137, 255, 0.2), transparent 25%);
+  box-shadow: 0 0 45px rgba(157, 65, 255, 0.13);
+  content: "";
+  pointer-events: none;
+}
+
+.video-card::after {
+  position: absolute;
+  z-index: 7;
+  top: 9px;
+  left: 50%;
+  width: 34%;
+  height: 2px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  box-shadow: 0 0 15px rgba(245, 192, 255, 0.7);
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .video-card:hover {
-  filter: drop-shadow(0 46px 76px rgba(37, 10, 75, 0.54));
+  box-shadow:
+    0 46px 100px rgba(0, 0, 0, 0.52),
+    0 0 38px rgba(255, 48, 184, 0.32),
+    0 0 76px rgba(72, 125, 255, 0.22),
+    inset 0 0 25px rgba(255, 255, 255, 0.1);
   transform: translateY(-7px) scale(1.01);
 }
 
 .video-card--cinematic {
   justify-self: center;
+}
+
+.video-card__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 36px;
+  background: #090510;
+  box-shadow:
+    inset 0 0 38px rgba(4, 2, 10, 0.56),
+    inset 0 0 12px rgba(198, 101, 255, 0.12);
 }
 
 .brand-video {
@@ -1443,7 +1497,7 @@ h1 span {
   height: 100%;
   background: #090510;
   object-fit: cover;
-  transform: scale(1.015);
+  transform: scale(1.012);
 }
 
 .video-card__scrim {
@@ -3573,7 +3627,18 @@ h1 span {
     height: auto;
     aspect-ratio: 9 / 16;
     margin: 0 auto;
+    padding: 3px;
+    border-radius: 32px;
     transform: none;
+  }
+
+  .video-card::before {
+    inset: -7px;
+    border-radius: 39px;
+  }
+
+  .video-card__screen {
+    border-radius: 28px;
   }
 
   .video-card:hover {
